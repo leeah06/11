@@ -1,18 +1,11 @@
 #include <stdio.h>
 
 int main(void) {
-    int i = 10;
-    char c = 'a';
+    int i = 4;   /* try 300 as well */
 
-    int *iptr;        /* integer pointer */
-    iptr = &i;        /* iptr points to i */
-    char *cptr;       /* char pointer */
-    cptr = &c;        /* cptr points to c */
-    int *iptr2;       /* another integer pointer */
-    iptr2 = iptr;     /* iptr2 points to the same place as iptr */
+    int *pi = &i;
+    char *pc = (char *)&i;   /* cast to avoid compiler warning */
 
-    printf("i : %p\n%p (size:%i)\n", iptr, &i, (int)sizeof(iptr));
-    printf("c : %p\n%p (size:%i)\n", cptr, &c, (int)sizeof(cptr));
-    printf("iptr2 : %p, %i\n", iptr2, *iptr2);
+    printf("%i, %i, %i\n", i, *pi, *pc);
     return 0;
 }
